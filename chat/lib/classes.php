@@ -20,6 +20,7 @@ require(AJAX_CHAT_PATH.'lib/class/AJAXChatFileSystem.php');
 require(AJAX_CHAT_PATH.'lib/class/AJAXChatHTTPHeader.php');
 require(AJAX_CHAT_PATH.'lib/class/AJAXChatLanguage.php');
 require(AJAX_CHAT_PATH.'lib/class/AJAXChatTemplate.php');
+require(AJAX_CHAT_PATH."lib/class/AJAXChatPlugin.php");
 require(AJAX_CHAT_PATH.'lib/class/CustomAJAXChat.php');
 require(AJAX_CHAT_PATH.'lib/class/CustomAJAXChatShoutBox.php');
 require(AJAX_CHAT_PATH.'lib/class/CustomAJAXChatInterface.php');
