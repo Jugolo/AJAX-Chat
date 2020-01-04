@@ -157,6 +157,8 @@ var ajaxChat = {
 		this.DOMbuffering			= false;
 		this.DOMbuffer				= "";
 		this.retryTimerDelay 		= (this.inactiveTimeout*6000 - this.timerRate)/4 + this.timerRate;
+		this.guestStartEncoding     = config["guestStartEncoding"];
+		this.guestEndEncoding       = config["guestEndEncoding"];
 	},
 
 	initDirectories: function() {
