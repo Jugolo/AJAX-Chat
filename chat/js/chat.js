@@ -1017,6 +1017,8 @@ var ajaxChat = {
 				userID = userNodes[i].getAttribute('userID');
 				userName = userNodes[i].firstChild ? userNodes[i].firstChild.nodeValue : '';
 				userRole = userNodes[i].getAttribute('userRole');
+				if(userRole == 0)
+					userName = this.guestStartEncoding+userName+this.guestEndEncoding;
 				onlineUsers.push(userID);
 				index = this.arraySearch(userID, this.usersList);
 				if(index === -1) {
