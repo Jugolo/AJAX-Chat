@@ -1049,12 +1049,15 @@ var ajaxChat = {
 	},
 
 	handleChatMessages: function(messageNodes) {
-		var userNode,userName,textNode,messageText,i;
+		var userNode,userName,textNode,messageText,i,userRole;
 		if(messageNodes.length) {
 			for(i=0; i<messageNodes.length; i++) {
 				this.DOMbuffering = true;
 				userNode = messageNodes[i].getElementsByTagName('username')[0];
 				userName = userNode.firstChild ? userNode.firstChild.nodeValue : '';
+				userRole   = messageNodes[i].getAttribute("userRole");
+				if(userRole == 0)
+					userName = this.guestStartEncoding+userName+this.guestEndEncoding;
 				textNode = messageNodes[i].getElementsByTagName('text')[0];
 				messageText = textNode.firstChild ? textNode.firstChild.nodeValue : '';
 				if (i === (messageNodes.length - 1)) {this.DOMbuffering = false;}
@@ -1062,7 +1065,7 @@ var ajaxChat = {
 						new Date(messageNodes[i].getAttribute('dateTime')),
 						messageNodes[i].getAttribute('userID'),
 						userName,
-						messageNodes[i].getAttribute('userRole'),
+						userRole,
 						messageNodes[i].getAttribute('id'),
 						messageText,
 						messageNodes[i].getAttribute('channelID'),
