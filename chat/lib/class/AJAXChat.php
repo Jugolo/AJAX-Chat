@@ -3153,6 +3153,15 @@ class AJAXChat {
 		return false;
 	}
 	
+	function validateUsername(string $userName) : bool{
+	    foreach($this->getCustomUsers() as $data){
+	        if($data['userName'] == $userName)
+	            return true;
+            }
+
+	    return false;
+        }
+	
 	function createGuestUserName() {
 		$maxLength =	$this->getConfig('userNameMaxLength')
 						- $this->stringLength($this->getConfig('guestUserPrefix'))
@@ -3188,7 +3197,7 @@ class AJAXChat {
 			$userName = $this->trimString($this->getRequestVar('userName'), null, $maxLength, true, true);
 
 			// If given userName is invalid, create one:
-			if(!$userName || !$this->validateUsername($userName)) {
+			if(!$userName || $this->validateUsername($userName)) {
 				$userName = $this->createGuestUserName();
 			}
 		} else {
