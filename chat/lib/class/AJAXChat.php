@@ -3188,11 +3188,8 @@ class AJAXChat {
 			$userName = $this->trimString($this->getRequestVar('userName'), null, $maxLength, true, true);
 
 			// If given userName is invalid, create one:
-			if(!$userName) {
+			if(!$userName || !$this->validateUsername($userName)) {
 				$userName = $this->createGuestUserName();
-			} else {
-				// Add the guest users prefix and suffix to the given userName:
-				$userName = $this->getConfig('guestUserPrefix').$userName.$this->getConfig('guestUserSuffix');	
 			}
 		} else {
 			$userName = $this->createGuestUserName();
