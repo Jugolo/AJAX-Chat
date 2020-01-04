@@ -11,10 +11,10 @@
 class AJAXChat {
 
 	public
+		$_config,
 		$db;
 
 	protected
-		$_config,
 		$_requestVars,
 		$_infoMessages,
 		$_channels,
