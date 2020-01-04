@@ -176,6 +176,10 @@ class AJAXChatTemplate {
 					return 'write_allowed';
                         case 'TOKEN':
                                 return session_id();
+		        case "guestStartEncoding":
+                                return $this->ajaxChat->_config["guestUserPrefix"];
+                        case "guestEndEncoding":
+                                return $this->ajaxChat->_config["guestUserSuffix"];
 			
 			default:
 				return $this->ajaxChat->replaceCustomTemplateTags($tagData[1], (isset($tagData[2]) ? $tagData[2] : null));
