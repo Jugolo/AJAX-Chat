@@ -192,6 +192,8 @@
 			ajaxChatConfig.socketServerHost = decodeURIComponent('[SOCKET_SERVER_HOST/]');
 			ajaxChatConfig.socketServerPort = parseInt('[SOCKET_SERVER_PORT/]');
 			ajaxChatConfig.socketServerChatID = parseInt('[SOCKET_SERVER_CHAT_ID/]');
+		        ajaxChatConfig.guestStartEncoding = '[GUEST_START]';
+			ajaxChatConfig.guestEndEncoding = '[GUEST_END]';
 		
 			ajaxChat.init(ajaxChatConfig, ajaxChatLang, true, true, true, initialize);
 		// ]]>
