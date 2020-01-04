@@ -176,9 +176,9 @@ class AJAXChatTemplate {
 					return 'write_allowed';
                         case 'TOKEN':
                                 return session_id();
-		        case "guestStartEncoding":
+		        case "GUEST_START":
                                 return $this->ajaxChat->_config["guestUserPrefix"];
-                        case "guestEndEncoding":
+                        case "GUEST_END":
                                 return $this->ajaxChat->_config["guestUserSuffix"];
 			
 			default:
